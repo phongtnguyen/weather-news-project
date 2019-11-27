@@ -16,6 +16,11 @@
 		A66177D5238EDC340097ACF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66177D4238EDC340097ACF3 /* Assets.xcassets */; };
 		A66177D8238EDC340097ACF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66177D6238EDC340097ACF3 /* LaunchScreen.storyboard */; };
 		A66177E0238EDDD90097ACF3 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66177DF238EDDD90097ACF3 /* Secrets.swift */; };
+		C4C8D532238F1D7200CA9D94 /* Justin in Resources */ = {isa = PBXBuildFile; fileRef = C4C8D531238F1D7200CA9D94 /* Justin */; };
+		C4C8D534238F1D8400CA9D94 /* Chanye in Resources */ = {isa = PBXBuildFile; fileRef = C4C8D533238F1D8400CA9D94 /* Chanye */; };
+		C4C8D536238F1D9300CA9D94 /* Phong in Resources */ = {isa = PBXBuildFile; fileRef = C4C8D535238F1D9300CA9D94 /* Phong */; };
+		C4C8D538238F1DA100CA9D94 /* Eric in Resources */ = {isa = PBXBuildFile; fileRef = C4C8D537238F1DA100CA9D94 /* Eric */; };
+		C4C8D53A238F1DB000CA9D94 /* Zongya in Resources */ = {isa = PBXBuildFile; fileRef = C4C8D539238F1DB000CA9D94 /* Zongya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		A66177D9238EDC340097ACF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A66177DF238EDDD90097ACF3 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		A8259D0599238A083B6E667B /* Pods-weather-news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather-news.release.xcconfig"; path = "Target Support Files/Pods-weather-news/Pods-weather-news.release.xcconfig"; sourceTree = "<group>"; };
+		C4C8D531238F1D7200CA9D94 /* Justin */ = {isa = PBXFileReference; lastKnownFileType = text; name = Justin; path = "../../../../Library/Autosave Information/ObjectiveC_Start/ObjectiveC_Start/Justin"; sourceTree = "<group>"; };
+		C4C8D533238F1D8400CA9D94 /* Chanye */ = {isa = PBXFileReference; lastKnownFileType = text; name = Chanye; path = "../../../../Library/Autosave Information/ObjectiveC_Start/ObjectiveC_Start/Chanye"; sourceTree = "<group>"; };
+		C4C8D535238F1D9300CA9D94 /* Phong */ = {isa = PBXFileReference; lastKnownFileType = text; name = Phong; path = "../../../../Library/Autosave Information/ObjectiveC_Start/ObjectiveC_Start/Phong"; sourceTree = "<group>"; };
+		C4C8D537238F1DA100CA9D94 /* Eric */ = {isa = PBXFileReference; lastKnownFileType = text; name = Eric; path = "../../../../Library/Autosave Information/ObjectiveC_Start/ObjectiveC_Start/Eric"; sourceTree = "<group>"; };
+		C4C8D539238F1DB000CA9D94 /* Zongya */ = {isa = PBXFileReference; lastKnownFileType = text; name = Zongya; path = "../../../../Library/Autosave Information/ObjectiveC_Start/ObjectiveC_Start/Zongya"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,7 @@
 		8296FFCB238F0D5E00C52E38 /* Zongya_Folder */ = {
 			isa = PBXGroup;
 			children = (
+				C4C8D539238F1DB000CA9D94 /* Zongya */,
 			);
 			path = Zongya_Folder;
 			sourceTree = "<group>";
@@ -65,6 +76,7 @@
 		8296FFCC238F0D7900C52E38 /* Eric_Folder */ = {
 			isa = PBXGroup;
 			children = (
+				C4C8D537238F1DA100CA9D94 /* Eric */,
 			);
 			path = Eric_Folder;
 			sourceTree = "<group>";
@@ -72,6 +84,7 @@
 		8296FFCD238F0D8100C52E38 /* Phong_Folder */ = {
 			isa = PBXGroup;
 			children = (
+				C4C8D535238F1D9300CA9D94 /* Phong */,
 			);
 			path = Phong_Folder;
 			sourceTree = "<group>";
@@ -79,6 +92,7 @@
 		8296FFCE238F0D8900C52E38 /* Chanye_Folder */ = {
 			isa = PBXGroup;
 			children = (
+				C4C8D533238F1D8400CA9D94 /* Chanye */,
 			);
 			path = Chanye_Folder;
 			sourceTree = "<group>";
@@ -86,6 +100,7 @@
 		8296FFCF238F0D9200C52E38 /* Justin_Folder */ = {
 			isa = PBXGroup;
 			children = (
+				C4C8D531238F1D7200CA9D94 /* Justin */,
 			);
 			path = Justin_Folder;
 			sourceTree = "<group>";
@@ -197,9 +212,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C8D534238F1D8400CA9D94 /* Chanye in Resources */,
 				A66177D8238EDC340097ACF3 /* LaunchScreen.storyboard in Resources */,
 				A66177D5238EDC340097ACF3 /* Assets.xcassets in Resources */,
+				C4C8D536238F1D9300CA9D94 /* Phong in Resources */,
 				A66177D3238EDC340097ACF3 /* Main.storyboard in Resources */,
+				C4C8D532238F1D7200CA9D94 /* Justin in Resources */,
+				C4C8D53A238F1DB000CA9D94 /* Zongya in Resources */,
+				C4C8D538238F1DA100CA9D94 /* Eric in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
