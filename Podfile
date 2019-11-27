@@ -10,5 +10,6 @@ target 'weather-news' do
   pod 'RxCocoa'
   pod 'RxFirebase'
   pod 'RxAlamofire'
+	pod 'SideMenu'
   
 end

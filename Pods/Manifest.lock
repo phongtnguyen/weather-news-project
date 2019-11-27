@@ -325,12 +325,14 @@ PODS:
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
+  - SideMenu (6.4.7)
 
 DEPENDENCIES:
   - RxAlamofire
   - RxCocoa
   - RxFirebase
   - RxSwift
+  - SideMenu
 
 SPEC REPOS:
   trunk:
@@ -370,6 +372,7 @@ SPEC REPOS:
     - RxFirebaseStorage
     - RxRelay
     - RxSwift
+    - SideMenu
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -408,7 +411,8 @@ SPEC CHECKSUMS:
   RxFirebaseStorage: 271184ff8f8d3660bfc751dcafdbb4dd01d0b8a1
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
 
-PODFILE CHECKSUM: 1d30a0ce220778279f78f2916e016140cc362733
+PODFILE CHECKSUM: c74a13339dad53d520a3902bc7f99369fb224e6a
 
 COCOAPODS: 1.8.4
