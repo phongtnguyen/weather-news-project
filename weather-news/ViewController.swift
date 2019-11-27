@@ -13,7 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set up view
+        if let path = Bundle.main.path(forResource: "key", ofType: "plist") {
+            let keys = NSDictionary(contentsOfFile: path)
+            print (keys)
+        } else {
+            print ("No file")
+        }
     }
 
 

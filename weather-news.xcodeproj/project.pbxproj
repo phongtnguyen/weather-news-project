@@ -15,6 +15,7 @@
 		A66177D5238EDC340097ACF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66177D4238EDC340097ACF3 /* Assets.xcassets */; };
 		A66177D8238EDC340097ACF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66177D6238EDC340097ACF3 /* LaunchScreen.storyboard */; };
 		A66177E0238EDDD90097ACF3 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66177DF238EDDD90097ACF3 /* Secrets.swift */; };
+		A6F3B6CA238EEFC6002E1D12 /* key.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6F3B6C9238EEFC6002E1D12 /* key.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		A66177D7238EDC340097ACF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A66177D9238EDC340097ACF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A66177DF238EDDD90097ACF3 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		A6F3B6C9238EEFC6002E1D12 /* key.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = key.plist; sourceTree = "<group>"; };
 		A8259D0599238A083B6E667B /* Pods-weather-news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather-news.release.xcconfig"; path = "Target Support Files/Pods-weather-news/Pods-weather-news.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				A66177D4238EDC340097ACF3 /* Assets.xcassets */,
 				A66177D6238EDC340097ACF3 /* LaunchScreen.storyboard */,
 				A66177D9238EDC340097ACF3 /* Info.plist */,
+				A6F3B6C9238EEFC6002E1D12 /* key.plist */,
 				A66177DF238EDDD90097ACF3 /* Secrets.swift */,
 			);
 			path = "weather-news";
@@ -154,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6F3B6CA238EEFC6002E1D12 /* key.plist in Resources */,
 				A66177D8238EDC340097ACF3 /* LaunchScreen.storyboard in Resources */,
 				A66177D5238EDC340097ACF3 /* Assets.xcassets in Resources */,
 				A66177D3238EDC340097ACF3 /* Main.storyboard in Resources */,
