@@ -11,5 +11,7 @@ target 'weather-news' do
   pod 'RxFirebase'
   pod 'RxAlamofire'
 	pod 'SideMenu'
+  pod 'Charts'
+  pod 'IQKeyboardManager'
   
 end
