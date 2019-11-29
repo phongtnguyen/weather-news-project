@@ -19,7 +19,9 @@ class SideBarViewController: UIViewController {
     }
     
     @IBAction func openEricView(_ sender: UIButton) {
-        
+        let sb = UIStoryboard(name: "Eric", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "SearchViewController") as! SearchViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func openPhongView(_ sender: UIButton) {

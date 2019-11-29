@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2978C280239174A600DDF623 /* StocksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C275239174A600DDF623 /* StocksCell.swift */; };
+		2978C281239174A600DDF623 /* StocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C277239174A600DDF623 /* StocksViewModel.swift */; };
+		2978C282239174A600DDF623 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C279239174A600DDF623 /* QueryService.swift */; };
+		2978C283239174A600DDF623 /* Stocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C27B239174A600DDF623 /* Stocks.swift */; };
+		2978C284239174A600DDF623 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C27D239174A600DDF623 /* SearchViewController.swift */; };
+		2978C285239174A600DDF623 /* Eric.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2978C27E239174A600DDF623 /* Eric.storyboard */; };
+		2978C286239174A600DDF623 /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C27F239174A600DDF623 /* StockViewController.swift */; };
 		8296FFCA238F0C9F00C52E38 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8296FFC9238F0C9F00C52E38 /* SideBarViewController.swift */; };
 		949D340FD8DB016D690FA86E /* Pods_weather_news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8349582F9B0D5F0E7F6064A2 /* Pods_weather_news.framework */; };
 		A66177CC238EDC340097ACF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66177CB238EDC340097ACF3 /* AppDelegate.swift */; };
@@ -16,13 +23,19 @@
 		A66177D5238EDC340097ACF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66177D4238EDC340097ACF3 /* Assets.xcassets */; };
 		A66177D8238EDC340097ACF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66177D6238EDC340097ACF3 /* LaunchScreen.storyboard */; };
 		A66177E0238EDDD90097ACF3 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66177DF238EDDD90097ACF3 /* Secrets.swift */; };
-		C4C8D541238F208A00CA9D94 /* Eric.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8D53C238F208900CA9D94 /* Eric.swift */; };
 		C4C8D542238F208A00CA9D94 /* Phong.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8D53E238F208900CA9D94 /* Phong.swift */; };
 		C4C8D543238F208A00CA9D94 /* Zongya.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8D540238F208A00CA9D94 /* Zongya.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1753C439548D40A8E5B8A013 /* Pods-weather-news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather-news.debug.xcconfig"; path = "Target Support Files/Pods-weather-news/Pods-weather-news.debug.xcconfig"; sourceTree = "<group>"; };
+		2978C275239174A600DDF623 /* StocksCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StocksCell.swift; sourceTree = "<group>"; };
+		2978C277239174A600DDF623 /* StocksViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StocksViewModel.swift; sourceTree = "<group>"; };
+		2978C279239174A600DDF623 /* QueryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
+		2978C27B239174A600DDF623 /* Stocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stocks.swift; sourceTree = "<group>"; };
+		2978C27D239174A600DDF623 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2978C27E239174A600DDF623 /* Eric.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Eric.storyboard; sourceTree = "<group>"; };
+		2978C27F239174A600DDF623 /* StockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 		8296FFC9238F0C9F00C52E38 /* SideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
 		8349582F9B0D5F0E7F6064A2 /* Pods_weather_news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weather_news.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66177C8238EDC340097ACF3 /* weather-news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-news.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,7 +48,6 @@
 		A66177D9238EDC340097ACF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A66177DF238EDDD90097ACF3 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		A8259D0599238A083B6E667B /* Pods-weather-news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather-news.release.xcconfig"; path = "Target Support Files/Pods-weather-news/Pods-weather-news.release.xcconfig"; sourceTree = "<group>"; };
-		C4C8D53C238F208900CA9D94 /* Eric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eric.swift; sourceTree = "<group>"; };
 		C4C8D53E238F208900CA9D94 /* Phong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phong.swift; sourceTree = "<group>"; };
 		C4C8D540238F208A00CA9D94 /* Zongya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zongya.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +64,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2978C273239174A600DDF623 /* Eric_Folder */ = {
+			isa = PBXGroup;
+			children = (
+				2978C274239174A600DDF623 /* Cells */,
+				2978C276239174A600DDF623 /* View Models */,
+				2978C278239174A600DDF623 /* Networking */,
+				2978C27A239174A600DDF623 /* Models */,
+				2978C27C239174A600DDF623 /* View */,
+			);
+			path = Eric_Folder;
+			sourceTree = "<group>";
+		};
+		2978C274239174A600DDF623 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2978C275239174A600DDF623 /* StocksCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2978C276239174A600DDF623 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				2978C277239174A600DDF623 /* StocksViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		2978C278239174A600DDF623 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2978C279239174A600DDF623 /* QueryService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2978C27A239174A600DDF623 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2978C27B239174A600DDF623 /* Stocks.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2978C27C239174A600DDF623 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2978C27D239174A600DDF623 /* SearchViewController.swift */,
+				2978C27E239174A600DDF623 /* Eric.storyboard */,
+				2978C27F239174A600DDF623 /* StockViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4053F911FF5DA48F5B9C3AAB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +148,7 @@
 		A66177CA238EDC340097ACF3 /* weather-news */ = {
 			isa = PBXGroup;
 			children = (
-				C4C8D53B238F208900CA9D94 /* Eric_Folder */,
+				2978C273239174A600DDF623 /* Eric_Folder */,
 				C4C8D53D238F208900CA9D94 /* Phong_Folder */,
 				C4C8D53F238F208A00CA9D94 /* Zongya_Folder */,
 				A66177CB238EDC340097ACF3 /* AppDelegate.swift */,
@@ -96,14 +162,6 @@
 				8296FFC9238F0C9F00C52E38 /* SideBarViewController.swift */,
 			);
 			path = "weather-news";
-			sourceTree = "<group>";
-		};
-		C4C8D53B238F208900CA9D94 /* Eric_Folder */ = {
-			isa = PBXGroup;
-			children = (
-				C4C8D53C238F208900CA9D94 /* Eric.swift */,
-			);
-			path = Eric_Folder;
 			sourceTree = "<group>";
 		};
 		C4C8D53D238F208900CA9D94 /* Phong_Folder */ = {
@@ -191,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A66177D8238EDC340097ACF3 /* LaunchScreen.storyboard in Resources */,
+				2978C285239174A600DDF623 /* Eric.storyboard in Resources */,
 				A66177D5238EDC340097ACF3 /* Assets.xcassets in Resources */,
 				A66177D3238EDC340097ACF3 /* Main.storyboard in Resources */,
 			);
@@ -247,12 +306,17 @@
 			files = (
 				C4C8D542238F208A00CA9D94 /* Phong.swift in Sources */,
 				A66177D0238EDC340097ACF3 /* ViewController.swift in Sources */,
+				2978C282239174A600DDF623 /* QueryService.swift in Sources */,
+				2978C280239174A600DDF623 /* StocksCell.swift in Sources */,
 				A66177E0238EDDD90097ACF3 /* Secrets.swift in Sources */,
 				8296FFCA238F0C9F00C52E38 /* SideBarViewController.swift in Sources */,
+				2978C286239174A600DDF623 /* StockViewController.swift in Sources */,
+				2978C284239174A600DDF623 /* SearchViewController.swift in Sources */,
 				A66177CC238EDC340097ACF3 /* AppDelegate.swift in Sources */,
-				C4C8D541238F208A00CA9D94 /* Eric.swift in Sources */,
+				2978C283239174A600DDF623 /* Stocks.swift in Sources */,
 				A66177CE238EDC340097ACF3 /* SceneDelegate.swift in Sources */,
 				C4C8D543238F208A00CA9D94 /* Zongya.swift in Sources */,
+				2978C281239174A600DDF623 /* StocksViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
