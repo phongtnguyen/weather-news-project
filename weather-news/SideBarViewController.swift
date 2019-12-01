@@ -20,7 +20,7 @@ class SideBarViewController: UIViewController {
     
     @IBAction func openEricView(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Eric", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "SearchViewController") as! SearchViewController
+        let vc = sb.instantiateViewController(identifier: "StockViewController") as! StockViewController
         navigationController?.pushViewController(vc, animated: true)
     }
     

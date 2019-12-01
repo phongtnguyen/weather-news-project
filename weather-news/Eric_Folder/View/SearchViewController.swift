@@ -7,36 +7,25 @@
 //
 
 import UIKit
+import EmptyStateKit
+import RxSwift
+import RxCocoa
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, EmptyStateDelegate{
 
-    //
-    // MARK: - Constants
-    //
-    
-    /// Get local file path: download task stores tune here; AV player plays it.
-    let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     let queryService = QueryService()
     
-    //
-    // MARK: - IBOutlets
-    //
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    //
-    // MARK: - Variables And Properties
-    //
     var searchResults: [BestMatch] = []
-    
+    var selected = TableState.noInternet
     lazy var tapRecognizer: UITapGestureRecognizer = {
         var recognizer = UITapGestureRecognizer(target:self, action: #selector(dismissKeyboard))
         return recognizer
     }()
+    let selectedStockSubject = PublishSubject<String>()
     
-    //
-    // MARK: - Internal Methods
-    //
     @objc func dismissKeyboard() {
         searchBar.resignFirstResponder()
     }
@@ -44,9 +33,12 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.emptyState.format = selected.format
+        tableView.emptyState.delegate = self
     }
-
+    
+    func emptyState(emptyState: EmptyState, didPressButton button: UIButton) {
+    }
 }
 
 
@@ -88,6 +80,11 @@ extension SearchViewController: UISearchBarDelegate {
 //
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchResults.count == 0 {
+            tableView.emptyState.show(selected)
+        } else {
+            tableView.emptyState.hide()
+        }
         return searchResults.count
     }
     
@@ -98,5 +95,10 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(stock: stock)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedStockSubject.onNext(searchResults[indexPath.row].symbol)
+        navigationController?.popViewController(animated: true)
     }
 }

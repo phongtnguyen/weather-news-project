@@ -14,6 +14,11 @@
 		2978C284239174A600DDF623 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C27D239174A600DDF623 /* SearchViewController.swift */; };
 		2978C285239174A600DDF623 /* Eric.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2978C27E239174A600DDF623 /* Eric.storyboard */; };
 		2978C286239174A600DDF623 /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C27F239174A600DDF623 /* StockViewController.swift */; };
+		2978C28823917F5500DDF623 /* TableState+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C28723917F5500DDF623 /* TableState+Format.swift */; };
+		2978C28A239180E100DDF623 /* TableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C289239180E100DDF623 /* TableState.swift */; };
+		2978C28D2391970C00DDF623 /* String+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C28C2391970C00DDF623 /* String+Hex.swift */; };
+		2978C28F23919EC000DDF623 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C28E23919EC000DDF623 /* UIColor.swift */; };
+		2978C29223919F2F00DDF623 /* StockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978C29123919F2F00DDF623 /* StockCollectionViewCell.swift */; };
 		8296FFCA238F0C9F00C52E38 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8296FFC9238F0C9F00C52E38 /* SideBarViewController.swift */; };
 		949D340FD8DB016D690FA86E /* Pods_weather_news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8349582F9B0D5F0E7F6064A2 /* Pods_weather_news.framework */; };
 		A66177CC238EDC340097ACF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66177CB238EDC340097ACF3 /* AppDelegate.swift */; };
@@ -36,6 +41,11 @@
 		2978C27D239174A600DDF623 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2978C27E239174A600DDF623 /* Eric.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Eric.storyboard; sourceTree = "<group>"; };
 		2978C27F239174A600DDF623 /* StockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
+		2978C28723917F5500DDF623 /* TableState+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableState+Format.swift"; sourceTree = "<group>"; };
+		2978C289239180E100DDF623 /* TableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableState.swift; sourceTree = "<group>"; };
+		2978C28C2391970C00DDF623 /* String+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hex.swift"; sourceTree = "<group>"; };
+		2978C28E23919EC000DDF623 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		2978C29123919F2F00DDF623 /* StockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewCell.swift; sourceTree = "<group>"; };
 		8296FFC9238F0C9F00C52E38 /* SideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
 		8349582F9B0D5F0E7F6064A2 /* Pods_weather_news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weather_news.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66177C8238EDC340097ACF3 /* weather-news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-news.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,7 +77,9 @@
 		2978C273239174A600DDF623 /* Eric_Folder */ = {
 			isa = PBXGroup;
 			children = (
-				2978C274239174A600DDF623 /* Cells */,
+				2978C29023919F0500DDF623 /* Collection */,
+				2978C28B239196F200DDF623 /* Extensions */,
+				2978C274239174A600DDF623 /* Table */,
 				2978C276239174A600DDF623 /* View Models */,
 				2978C278239174A600DDF623 /* Networking */,
 				2978C27A239174A600DDF623 /* Models */,
@@ -76,12 +88,14 @@
 			path = Eric_Folder;
 			sourceTree = "<group>";
 		};
-		2978C274239174A600DDF623 /* Cells */ = {
+		2978C274239174A600DDF623 /* Table */ = {
 			isa = PBXGroup;
 			children = (
 				2978C275239174A600DDF623 /* StocksCell.swift */,
+				2978C289239180E100DDF623 /* TableState.swift */,
+				2978C28723917F5500DDF623 /* TableState+Format.swift */,
 			);
-			path = Cells;
+			path = Table;
 			sourceTree = "<group>";
 		};
 		2978C276239174A600DDF623 /* View Models */ = {
@@ -111,11 +125,28 @@
 		2978C27C239174A600DDF623 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2978C27F239174A600DDF623 /* StockViewController.swift */,
 				2978C27D239174A600DDF623 /* SearchViewController.swift */,
 				2978C27E239174A600DDF623 /* Eric.storyboard */,
-				2978C27F239174A600DDF623 /* StockViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2978C28B239196F200DDF623 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2978C28C2391970C00DDF623 /* String+Hex.swift */,
+				2978C28E23919EC000DDF623 /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2978C29023919F0500DDF623 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				2978C29123919F2F00DDF623 /* StockCollectionViewCell.swift */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		4053F911FF5DA48F5B9C3AAB /* Pods */ = {
@@ -304,10 +335,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2978C28A239180E100DDF623 /* TableState.swift in Sources */,
 				C4C8D542238F208A00CA9D94 /* Phong.swift in Sources */,
+				2978C28D2391970C00DDF623 /* String+Hex.swift in Sources */,
+				2978C29223919F2F00DDF623 /* StockCollectionViewCell.swift in Sources */,
 				A66177D0238EDC340097ACF3 /* ViewController.swift in Sources */,
 				2978C282239174A600DDF623 /* QueryService.swift in Sources */,
 				2978C280239174A600DDF623 /* StocksCell.swift in Sources */,
+				2978C28F23919EC000DDF623 /* UIColor.swift in Sources */,
 				A66177E0238EDDD90097ACF3 /* Secrets.swift in Sources */,
 				8296FFCA238F0C9F00C52E38 /* SideBarViewController.swift in Sources */,
 				2978C286239174A600DDF623 /* StockViewController.swift in Sources */,
@@ -317,6 +352,7 @@
 				A66177CE238EDC340097ACF3 /* SceneDelegate.swift in Sources */,
 				C4C8D543238F208A00CA9D94 /* Zongya.swift in Sources */,
 				2978C281239174A600DDF623 /* StocksViewModel.swift in Sources */,
+				2978C28823917F5500DDF623 /* TableState+Format.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

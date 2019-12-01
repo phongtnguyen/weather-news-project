@@ -13,5 +13,7 @@ target 'weather-news' do
 	pod 'SideMenu'
   pod 'Charts'
   pod 'IQKeyboardManager'
+  pod 'EmptyStateKit'
+  pod 'GravitySliderFlowLayout'
   
 end

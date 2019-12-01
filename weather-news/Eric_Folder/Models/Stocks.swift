@@ -27,6 +27,13 @@ struct BestMatch: Codable {
     }
 }
 
+// MARK: - Stock
+struct Stock {
+    let companyName: String?
+    let metaData: MetaData
+    let timeSeries: [TimeSeriesDaily]
+}
+
 // MARK: - MetaData
 struct MetaData: Codable {
     let information, symbol, lastRefreshed, outputSize: String

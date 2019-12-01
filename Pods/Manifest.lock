@@ -168,6 +168,7 @@ PODS:
   - Charts (3.4.0):
     - Charts/Core (= 3.4.0)
   - Charts/Core (3.4.0)
+  - EmptyStateKit (1.1.0)
   - FirebaseABTesting (3.1.2):
     - FirebaseAnalyticsInterop (~> 1.3)
     - FirebaseCore (~> 6.1)
@@ -249,6 +250,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.3.2):
     - GoogleUtilities/Logger
+  - GravitySliderFlowLayout (1.0)
   - "gRPC-C++ (0.0.9)":
     - "gRPC-C++/Implementation (= 0.0.9)"
     - "gRPC-C++/Interface (= 0.0.9)"
@@ -333,6 +335,8 @@ PODS:
 
 DEPENDENCIES:
   - Charts
+  - EmptyStateKit
+  - GravitySliderFlowLayout
   - IQKeyboardManager
   - RxAlamofire
   - RxCocoa
@@ -346,6 +350,7 @@ SPEC REPOS:
     - Alamofire
     - BoringSSL-GRPC
     - Charts
+    - EmptyStateKit
     - FirebaseABTesting
     - FirebaseAnalyticsInterop
     - FirebaseAuth
@@ -362,6 +367,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
+    - GravitySliderFlowLayout
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
@@ -387,6 +393,7 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  EmptyStateKit: dc41e9ce5c6089f67a49d063bce73ade9f2ba73f
   FirebaseABTesting: 0d10f3cdc3fa00f3f175b5b56c1003c8e888299f
   FirebaseAnalyticsInterop: d48b6ab67bcf016a05e55b71fc39c61c0cb6b7f3
   FirebaseAuth: 7d0f84873926f6648bbd1391a318dfb1a26b5e4f
@@ -403,6 +410,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 8e9b210c97d55fbff306cc5468ff91b9cb32dcf5
   GoogleDataTransportCCTSupport: ef79a4728b864946a8aafdbab770d5294faf3b5f
   GoogleUtilities: 547a86735c6f0ee30ad17e94df4fc21f616b71cb
+  GravitySliderFlowLayout: bb9ae6a302b85821c9e0271c00533fae8091143b
   "gRPC-C++": 9dfe7b44821e7b3e44aacad2af29d2c21f7cde83
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
@@ -423,6 +431,6 @@ SPEC CHECKSUMS:
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
 
-PODFILE CHECKSUM: c904c7fb8b246f67bba1341dd77fdfad1d4fba9d
+PODFILE CHECKSUM: 57f029904c428c9b96952878d310ac2227694bdb
 
 COCOAPODS: 1.8.4
