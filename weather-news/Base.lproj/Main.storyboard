@@ -15,22 +15,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL7-8s-gRl">
-                                <rect key="frame" x="151.5" y="433" width="111" height="30"/>
-                                <state key="normal" title="Show SideMenu"/>
-                                <connections>
-                                    <segue destination="TXC-Jo-aug" kind="presentation" id="hSK-1a-gOU"/>
-                                </connections>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_background" translatesAutoresizingMaskIntoConstraints="NO" id="ZU9-Ee-WYp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cL7-8s-gRl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Q8R-6k-02e"/>
-                            <constraint firstItem="cL7-8s-gRl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uhU-Fw-Apa"/>
+                            <constraint firstItem="ZU9-Ee-WYp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8xK-xd-POu"/>
+                            <constraint firstAttribute="bottom" secondItem="ZU9-Ee-WYp" secondAttribute="bottom" id="DHR-lI-1Ro"/>
+                            <constraint firstItem="ZU9-Ee-WYp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EFh-XJ-g1J"/>
+                            <constraint firstItem="ZU9-Ee-WYp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y6q-ly-ECD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4tR-lH-2bV"/>
+                    <navigationItem key="navigationItem" id="4tR-lH-2bV">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="WdX-UT-lhP">
+                            <connections>
+                                <segue destination="TXC-Jo-aug" kind="presentation" id="c1w-m0-aRr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,54 +67,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sideMenu_background2" translatesAutoresizingMaskIntoConstraints="NO" id="mmx-q3-WQC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="je7-uC-8ZB">
-                                <rect key="frame" x="147" y="353" width="120" height="190"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="300"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfT-H6-VR9">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
-                                        <state key="normal" title="Zongya"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.20205215669014084" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="News">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="openZongyaView:" destination="M17-f8-Jfd" eventType="touchUpInside" id="0bI-yI-9Gi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Far-wg-Hlj">
-                                        <rect key="frame" x="0.0" y="40" width="120" height="30"/>
-                                        <state key="normal" title="Eric"/>
+                                        <rect key="frame" x="0.0" y="62" width="414" height="52"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.20205215669014084" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Stock">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="openEricView:" destination="M17-f8-Jfd" eventType="touchUpInside" id="Q8F-Q7-ME3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gys-zb-EL2">
-                                        <rect key="frame" x="0.0" y="80" width="120" height="30"/>
-                                        <state key="normal" title="Phong"/>
+                                        <rect key="frame" x="0.0" y="124" width="414" height="52"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.20205215669014084" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="iTunes">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="openPhongView:" destination="M17-f8-Jfd" eventType="touchUpInside" id="6pa-KM-DNi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtH-sA-gLU">
-                                        <rect key="frame" x="0.0" y="120" width="120" height="30"/>
-                                        <state key="normal" title="Justin"/>
+                                        <rect key="frame" x="0.0" y="186" width="414" height="52"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.20205215669014084" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Horoscope">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="openJustinView:" destination="M17-f8-Jfd" eventType="touchUpInside" id="3JO-44-Mrc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRq-Yo-3nD">
-                                        <rect key="frame" x="0.0" y="160" width="120" height="30"/>
-                                        <state key="normal" title="Chanye"/>
+                                        <rect key="frame" x="0.0" y="248" width="414" height="52"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.20205215669014084" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Weather">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="openChanyeView:" destination="M17-f8-Jfd" eventType="touchUpInside" id="KgT-XC-qEF"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="L1L-mf-QcR"/>
+                                    <constraint firstAttribute="height" constant="300" id="TNc-Fd-Zv1"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="je7-uC-8ZB" firstAttribute="centerY" secondItem="ohd-gX-WdS" secondAttribute="centerY" id="T9D-DG-J7T"/>
-                            <constraint firstItem="je7-uC-8ZB" firstAttribute="centerX" secondItem="ohd-gX-WdS" secondAttribute="centerX" id="uTr-dK-JWa"/>
+                            <constraint firstItem="je7-uC-8ZB" firstAttribute="top" secondItem="tiZ-Uc-CDH" secondAttribute="top" id="8FY-ZP-xGq"/>
+                            <constraint firstItem="je7-uC-8ZB" firstAttribute="leading" secondItem="tiZ-Uc-CDH" secondAttribute="leading" id="Skg-dd-NRj"/>
+                            <constraint firstItem="mmx-q3-WQC" firstAttribute="top" secondItem="tiZ-Uc-CDH" secondAttribute="top" id="eiq-kg-KEx"/>
+                            <constraint firstItem="tiZ-Uc-CDH" firstAttribute="trailing" secondItem="je7-uC-8ZB" secondAttribute="trailing" id="hvu-gr-58D"/>
+                            <constraint firstItem="mmx-q3-WQC" firstAttribute="leading" secondItem="tiZ-Uc-CDH" secondAttribute="leading" id="qsY-OO-m1C"/>
+                            <constraint firstAttribute="bottom" secondItem="mmx-q3-WQC" secondAttribute="bottom" id="t3x-Sz-EPT"/>
+                            <constraint firstItem="mmx-q3-WQC" firstAttribute="trailing" secondItem="tiZ-Uc-CDH" secondAttribute="trailing" id="vd5-vd-cc6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tiZ-Uc-CDH"/>
                     </view>
@@ -118,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pt2-cs-ob0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2536.231884057971" y="93.75"/>
+            <point key="canvasLocation" x="2534.7826086956525" y="93.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="y41-vn-Vuu">
@@ -139,4 +166,8 @@
             <point key="canvasLocation" x="131.8840579710145" y="99.776785714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="main_background" width="1500" height="2668"/>
+        <image name="sideMenu_background2" width="1440" height="2560"/>
+    </resources>
 </document>
