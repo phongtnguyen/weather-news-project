@@ -15,24 +15,32 @@ class SideBarViewController: UIViewController {
     }
     
     @IBAction func openZongyaView(_ sender: UIButton) {
-        
+        let vc = UIStoryboard(name: "Zongya", bundle: nil).instantiateViewController(withIdentifier: "tryViewController")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func openEricView(_ sender: UIButton) {
-        
+        let sb = UIStoryboard(name: "Eric", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "StockViewController") as! StockViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func openPhongView(_ sender: UIButton) {
-        //let st = UIStoryboard(name: "Phong_Storyboard", bundle: nil)
-        
+        let vc = ItunesViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func openJustinView(_ sender: UIButton) {
-        
+        let st = UIStoryboard(name: "Justin", bundle: nil)
+        let vc = st.instantiateViewController(withIdentifier: "HoroscopeViewController") as UIViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func openChanyeView(_ sender: UIButton) {
-        
+        let st = UIStoryboard(name: "WeatherScreen", bundle: nil)
+        let vc = st.instantiateViewController(withIdentifier: "WeatherViewController") as UIViewController
+        navigationController?.pushViewController(vc, animated: true)
+//        present(vc, animated: true, completion: nil)
     }
     
 }

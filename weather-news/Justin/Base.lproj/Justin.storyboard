@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7fX-Vg-2EP">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Horoscope View Controller-->
+        <scene sceneID="9oL-hZ-r2C">
+            <objects>
+                <viewController storyboardIdentifier="HoroscopeViewController" id="7fX-Vg-2EP" customClass="HoroscopeViewController" customModule="weather_news" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GXV-ce-3vj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="XyN-Aa-Gef">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qXa-2O-5P8" userLabel="CollectionView" customClass="GeminiCollectionView" customModule="Gemini">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="397"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="1" id="noY-s7-MIw">
+                                    <size key="itemSize" width="164" height="138"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="cell" id="U06-a4-zZH" customClass="HoroscopeCollectionViewCells" customModule="weather_news" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="138"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KBy-6M-DAa">
+                                            <rect key="frame" x="0.0" y="0.0" width="164" height="138"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nosign" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5St-YZ-6G7">
+                                                    <rect key="frame" x="0.0" y="0.5" width="164" height="76"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1H-qi-o8f">
+                                                    <rect key="frame" x="30" y="97" width="104" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="NaI-dt-3sU"/>
+                                                    </constraints>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <font key="NSFont" size="24" name="Copperplate"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="W1H-qi-o8f" secondAttribute="trailing" constant="30" id="5WX-aI-Db5"/>
+                                                <constraint firstItem="5St-YZ-6G7" firstAttribute="leading" secondItem="KBy-6M-DAa" secondAttribute="leading" id="73U-XP-hKJ"/>
+                                                <constraint firstItem="W1H-qi-o8f" firstAttribute="top" secondItem="5St-YZ-6G7" secondAttribute="bottom" constant="20" id="QZG-NW-vRv"/>
+                                                <constraint firstItem="5St-YZ-6G7" firstAttribute="top" secondItem="KBy-6M-DAa" secondAttribute="top" id="XZ2-kT-gJe"/>
+                                                <constraint firstAttribute="trailing" secondItem="5St-YZ-6G7" secondAttribute="trailing" id="e9I-eX-4OU"/>
+                                                <constraint firstAttribute="bottom" secondItem="W1H-qi-o8f" secondAttribute="bottom" constant="20" id="eGk-j9-Mp0"/>
+                                                <constraint firstItem="W1H-qi-o8f" firstAttribute="leading" secondItem="KBy-6M-DAa" secondAttribute="leading" constant="30" id="m4d-tB-xmP"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="164" height="138"/>
+                                        <connections>
+                                            <outlet property="imageLbl" destination="W1H-qi-o8f" id="3iy-26-6y0"/>
+                                            <outlet property="imageView" destination="5St-YZ-6G7" id="3m3-x0-cu8"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="7fX-Vg-2EP" id="fSs-Dp-Mnk"/>
+                                    <outlet property="delegate" destination="7fX-Vg-2EP" id="Lkb-Gr-f6k"/>
+                                </connections>
+                            </collectionView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Jlf-MD-rXP">
+                                <rect key="frame" x="0.0" y="397" width="375" height="270"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.26480342439868432" green="0.60932163917945048" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qXa-2O-5P8" firstAttribute="top" secondItem="Dbd-jZ-gGk" secondAttribute="top" id="0EA-OZ-jKk"/>
+                            <constraint firstItem="Jlf-MD-rXP" firstAttribute="leading" secondItem="Dbd-jZ-gGk" secondAttribute="leading" id="0Zy-PX-aQD"/>
+                            <constraint firstItem="Dbd-jZ-gGk" firstAttribute="bottom" secondItem="qXa-2O-5P8" secondAttribute="bottom" constant="270" id="4aN-P5-sTR"/>
+                            <constraint firstItem="Jlf-MD-rXP" firstAttribute="top" secondItem="qXa-2O-5P8" secondAttribute="bottom" id="8BC-Da-fRY"/>
+                            <constraint firstItem="qXa-2O-5P8" firstAttribute="leading" secondItem="Dbd-jZ-gGk" secondAttribute="leading" id="BZh-kX-fzO"/>
+                            <constraint firstItem="XyN-Aa-Gef" firstAttribute="top" secondItem="GXV-ce-3vj" secondAttribute="top" id="Cfo-Iq-Y04"/>
+                            <constraint firstAttribute="bottom" secondItem="XyN-Aa-Gef" secondAttribute="bottom" id="EC4-um-9Av"/>
+                            <constraint firstItem="Dbd-jZ-gGk" firstAttribute="trailing" secondItem="Jlf-MD-rXP" secondAttribute="trailing" id="T2o-uZ-I8F"/>
+                            <constraint firstItem="Dbd-jZ-gGk" firstAttribute="trailing" secondItem="qXa-2O-5P8" secondAttribute="trailing" id="eUX-FQ-QC1"/>
+                            <constraint firstItem="XyN-Aa-Gef" firstAttribute="leading" secondItem="Dbd-jZ-gGk" secondAttribute="leading" id="hao-tH-M5Y"/>
+                            <constraint firstItem="Dbd-jZ-gGk" firstAttribute="trailing" secondItem="XyN-Aa-Gef" secondAttribute="trailing" id="iUB-jG-lpR"/>
+                            <constraint firstItem="Dbd-jZ-gGk" firstAttribute="bottom" secondItem="Jlf-MD-rXP" secondAttribute="bottom" id="jnz-XK-3rh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dbd-jZ-gGk"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kuu-6T-yVq"/>
+                    <connections>
+                        <outlet property="collectionView" destination="qXa-2O-5P8" id="Ch8-Zb-CZP"/>
+                        <outlet property="horoscopeTextView" destination="Jlf-MD-rXP" id="LQk-b7-SZQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QXR-bE-DwE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2876" y="789.35532233883066"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="500" height="749.5"/>
+        <image name="nosign" catalog="system" width="64" height="60"/>
+    </resources>
+</document>

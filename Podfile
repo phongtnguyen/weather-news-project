@@ -8,10 +8,33 @@ target 'weather-news' do
   # Pods for weather-news
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'RxFirebase'
   pod 'RxAlamofire'
 	pod 'SideMenu'
   pod 'Charts'
   pod 'IQKeyboardManager'
   
+  # Chanye
+  pod 'SVProgressHUD','2.2.5'
+  pod 'SwiftyGif'
+  pod 'ViewAnimator'
+  
+  # Phong
+  pod 'NVActivityIndicatorView'
+  pod 'RxDataSources'
+  pod 'SwiftSoup'
+  pod 'SwifterSwift'
+  pod 'SDWebImage'
+  pod 'MarqueeLabel'
+  
+  # Eric
+  pod 'EmptyStateKit'
+  pod 'GravitySliderFlowLayout'
+  
+  # Zongya
+  pod 'expanding-collection'
+  
+  # Justin
+  pod 'Gemini'
+  
+
 end
