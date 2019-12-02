@@ -8,7 +8,6 @@ target 'weather-news' do
   # Pods for weather-news
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'RxFirebase'
   pod 'RxAlamofire'
 	pod 'SideMenu'
   pod 'Charts'
