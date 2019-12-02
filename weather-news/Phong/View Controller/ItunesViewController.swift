@@ -14,6 +14,7 @@ import SwifterSwift
 import SDWebImage
 import AVFoundation
 import AVKit
+import MediaPlayer
 
 class ItunesViewController: UIViewController {
     
@@ -31,6 +32,26 @@ class ItunesViewController: UIViewController {
         super.viewDidLoad()
         setup()
         bindUI()
+        
+        requestMediaLibraryAccessAuthorization()
+    }
+    
+    private func requestMediaLibraryAccessAuthorization() {
+        if MPMediaLibrary.authorizationStatus() == .authorized {
+            if MediaLibraryHandler.mediaItems == nil {
+                print ("Authorized but all mediaitems is nil")
+                MediaLibraryHandler.updateAllMediaItems()
+            }
+        } else {
+            print ("Not authorized")
+            MPMediaLibrary.requestAuthorization { (status) in
+                print ("User granted authorization status \(status.rawValue)")
+                if status == .authorized {
+                    print ("Authorized and need to update all media items")
+                    MediaLibraryHandler.updateAllMediaItems()
+                }
+            }
+        }
     }
     
     func search(_ searchTerm: String) {
@@ -157,6 +178,7 @@ extension ItunesViewController {
             itunesTrackVC.track = self?.viewModel.getTrackAtIndex(indexPath.row)
             strongSelf.present(itunesTrackVC, animated: true, completion: {
                 ActivityIndicatorHelper.hideIndicator()
+                itunesTrackVC.checkAccessAuthorizationStatus()
                 selectedCell?.isSelected = false
             })
         }, onError: { (error) in

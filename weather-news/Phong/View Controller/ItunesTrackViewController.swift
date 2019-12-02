@@ -188,6 +188,14 @@ class ItunesTrackViewController: UIViewController {
         updatePlayerView(with: musicPlayer.nowPlayingItem())
     }
     
+    func checkAccessAuthorizationStatus() {
+        if MPMediaLibrary.authorizationStatus() != .authorized {
+            ItunesAlertHelper.showAlertWithDefaultAction(on: self, title: "Media Library Access Not Authorized", message: "This app is not authorized to access your media library. You can change permission in App settings.")
+        }
+        // maybe should update all media items here too but app automatically goes to first view controller after changing permission in app settings
+        // => so ItunesViewController is loaded again => all media items is updated
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

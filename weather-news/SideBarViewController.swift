@@ -21,7 +21,12 @@ class SideBarViewController: UIViewController {
     
     @IBAction func openEricView(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Eric", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "StockViewController") as! StockViewController
+        var vc: StockViewController
+        if #available(iOS 13.0, *) {
+            vc = sb.instantiateViewController(identifier: "StockViewController") as! StockViewController
+        } else {
+            vc = sb.instantiateViewController(withIdentifier: "StockViewController") as! StockViewController
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     

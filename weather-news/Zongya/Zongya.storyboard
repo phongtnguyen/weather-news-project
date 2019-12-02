@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +11,7 @@
         <!--Try View Controller-->
         <scene sceneID="Rmq-HT-aed">
             <objects>
-                <viewController storyboardIdentifier="tryViewController" id="ycN-e7-YdY" customClass="tryViewController" customModule="containerExpand" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tryViewController" id="ycN-e7-YdY" customClass="tryViewController" customModule="weather_news" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gjp-aL-fye">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +47,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ish-dS-V1P">
                                 <rect key="frame" x="318" y="11" width="76" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="list.dash" catalog="system">
+                                <state key="normal" title="Menu" image="list.dash" catalog="system">
                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -68,7 +69,7 @@
         <!--Try Table View Controller-->
         <scene sceneID="Nsq-Dk-t31">
             <objects>
-                <tableViewController storyboardIdentifier="tryTableViewController" id="IP6-P5-skp" customClass="tryTableViewController" customModule="containerExpand" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="tryTableViewController" id="IP6-P5-skp" customClass="tryTableViewController" customModule="weather_news" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sTU-Ea-NcX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -171,7 +172,9 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HLa-SV-2HR">
                                 <rect key="frame" x="319" y="11" width="75" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="arrowshape.turn.up.left" catalog="system"/>
+                                <state key="normal" title="Back" image="arrowshape.turn.up.left" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="backButtonHandler:" destination="IP6-P5-skp" eventType="touchUpInside" id="LSm-VD-aQw"/>
                                 </connections>
@@ -210,7 +213,7 @@
     </scenes>
     <resources>
         <image name="arrowshape.turn.up.left" catalog="system" width="64" height="52"/>
-        <image name="bright" width="16" height="16"/>
+        <image name="bright" width="621" height="1104"/>
         <image name="link" catalog="system" width="64" height="58"/>
         <image name="list.dash" catalog="system" width="64" height="42"/>
     </resources>

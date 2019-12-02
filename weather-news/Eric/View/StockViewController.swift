@@ -127,7 +127,12 @@ class StockViewController: UIViewController {
     
     @IBAction func goToSearch(_ sender: Any) {
         let sb = UIStoryboard(name: "Eric", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "SearchViewController") as! SearchViewController
+        let vc: SearchViewController
+        if #available(iOS 13.0, *) {
+            vc = sb.instantiateViewController(identifier: "SearchViewController") as! SearchViewController
+        } else {
+            vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        }
         navigationController?.pushViewController(vc, animated: true)
         vc.selectedStockSubject.subscribe(onNext: { [weak self] symbol in
             self?.stocks.insert(symbol)

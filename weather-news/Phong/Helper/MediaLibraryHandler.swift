@@ -11,13 +11,15 @@ import MediaPlayer
 
 class MediaLibraryHandler {
     
-    static let mediaItems = MPMediaQuery.songs().items
+    static var mediaItems = MPMediaQuery.songs().items
     
     let minMatchedByTitle = 1
     let minMatchedByArtist = 5
     let maxRelatedSongs = 20
     
-//    let maxConfidenceScore = 0.05 // lower == more likely to match => took long time and crashed
+    static func updateAllMediaItems() {
+        mediaItems = MPMediaQuery.songs().items
+    }
     
     func getMediaWithTrackInfo(_ track: ItunesTrack) -> (matchedTitle: [MPMediaItem], matchedArtist: [MPMediaItem], fuzzyMatched: [MPMediaItem]) {
         
