@@ -19,6 +19,7 @@ class StockViewController: UIViewController {
     @IBOutlet weak var lowLabel: UILabel!
     @IBOutlet weak var closeLabel: UILabel!
     @IBOutlet weak var volumeLabel: UILabel!
+    @IBOutlet weak var addStockButton: UIButton!
     
     let disposeBag = DisposeBag()
     let queryService = QueryService()
@@ -30,10 +31,11 @@ class StockViewController: UIViewController {
     let collectionViewCellWidthCoefficient: CGFloat = 0.55
     let priceButtonCornerRadius: CGFloat = 10
     
-    private var itemsNumber = 2000
+    private var itemsNumber = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureButton()
         getStocks()
         configureCollectionView()
     }
@@ -47,6 +49,10 @@ class StockViewController: UIViewController {
             }
             self.collectionView.reloadData()
         }
+    }
+    
+    private func configureButton() {
+        addStockButton.layer.cornerRadius = priceButtonCornerRadius
     }
     
     private func getStocks() {
