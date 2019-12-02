@@ -27,7 +27,7 @@ class StockCollectionViewCell: UICollectionViewCell, ChartViewDelegate {
         lineChart.pinchZoomEnabled = true
     }
     
-    func configureStockCell(_ cell: StockCollectionViewCell,_ stock: Stock, for indexPath: IndexPath) {
+    func configureStockCell(_ cell: StockCollectionViewCell,_ stock: Stock) {
         newLabel.text = stock.metaData.symbol
         
         var dataEntries: [ChartDataEntry] = []
@@ -48,10 +48,10 @@ class StockCollectionViewCell: UICollectionViewCell, ChartViewDelegate {
         cell.lineChart.data = lineChartData
         cell.lineChart.fitScreen()
         
-        configureCell(cell, for: indexPath)
+        configureCell(cell)
     }
     
-    func configureCell(_ cell: StockCollectionViewCell, for indexPath: IndexPath) {
+    func configureCell(_ cell: StockCollectionViewCell) {
         
         cell.clipsToBounds = false
         let gradientLayer = CAGradientLayer()

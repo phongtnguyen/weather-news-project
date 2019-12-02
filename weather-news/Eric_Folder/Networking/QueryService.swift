@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxAlamofire
+import RxSwift
 
 //
 // MARK: - Query Service
@@ -22,7 +24,7 @@ class QueryService {
     //
     // MARK: - Variables And Properties
     //
-    var dataTask: URLSessionDataTask?
+    let disposeBag = DisposeBag()
     var errorMessage = ""
     var stock : Stock?
     var bestMatches: [BestMatch] = []
@@ -37,37 +39,25 @@ class QueryService {
     //
     // MARK: - Internal Methods
     //
+    
     func getSearchResults(searchTerm: String, completion: @escaping QueryResult) {
-        dataTask?.cancel()
         
         if var urlComponents = URLComponents(string: "https://www.alphavantage.co/query?") {
             urlComponents.query = "function=SYMBOL_SEARCH&keywords=\(searchTerm)&apikey=\(APIKey.alphaVantageAPIKey)"
             
-            guard let url = urlComponents.url else {
-                return
-            }
+            guard let url = urlComponents.url else { return }
             
-            dataTask = defaultSession.dataTask(with: url) { [weak self] data, response, error in
-                defer {
-                    self?.dataTask = nil
-                }
+            RxAlamofire.requestJSON(.get, url).subscribe(onNext: { (response, data) in
                 
-                if let error = error {
-                    self?.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
-                } else if
-                    let data = data,
-                    let response = response as? HTTPURLResponse,
-                    response.statusCode == 200 {
-                    
-                    self?.updateSearchResults(data)
-                    
-                    DispatchQueue.main.async {
-                        completion(self?.bestMatches, self?.errorMessage ?? "")
-                    }
+                self.updateSearchResults(data)
+                
+            }, onError: { (error) in
+                print(error)
+            }, onCompleted: {
+                DispatchQueue.main.async {
+                    completion(self.bestMatches, self.errorMessage)
                 }
-            }
-            
-            dataTask?.resume()
+            }).disposed(by: disposeBag)
         }
     }
     
@@ -75,52 +65,34 @@ class QueryService {
         if var urlComponents = URLComponents(string: "https://www.alphavantage.co/query?") {
             urlComponents.query = "function=TIME_SERIES_DAILY&symbol=\(searchTerm)&apikey=\(APIKey.alphaVantageAPIKey)"
             
-            guard let url = urlComponents.url else {
-                return
-            }
+            guard let url = urlComponents.url else { return }
+            print(url)
             
-            dataTask = defaultSession.dataTask(with: url) { [weak self] data, response, error in
-                defer {
-                    self?.dataTask = nil
-                }
+            RxAlamofire.requestJSON(.get, url).subscribe(onNext: { (response, data) in
                 
-                if let error = error {
-                    self?.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
-                } else if
-                    let data = data,
-                    let response = response as? HTTPURLResponse,
-                    response.statusCode == 200 {
-                    
-                    self?.updateStockResults(data)
-                    
-                    DispatchQueue.main.async {
-                        completion(self?.stock, self?.errorMessage ?? "")
-                    }
+                self.updateStockResults(data)
+                
+            }, onError: { (error) in
+                print(error)
+            }, onCompleted: {
+                DispatchQueue.main.async {
+                    completion(self.stock, self.errorMessage)
                 }
-            }
-            
-            dataTask?.resume()
+            }).disposed(by: disposeBag)
         }
     }
     
     //
     // MARK: - Private Methods
     //
-    private func updateStockResults(_ data: Data) {
-        var response: JSONDictionary?
+    private func updateStockResults(_ data: Any) {
         stock = nil
         
         var metaData: MetaData?
         var timeSeriesDaily: [TimeSeriesDaily] = []
-        
-        do {
-            response = try JSONSerialization.jsonObject(with: data, options: []) as? JSONDictionary
-        } catch let parseError as NSError {
-            errorMessage += "JSONSerialization error: \(parseError.localizedDescription)\n"
-            return
-        }
-        
-        guard let metaDataDict = response!["Meta Data"] as? JSONDictionary else { return }
+
+        guard let response = data as? [String: AnyObject] else { return}
+        guard let metaDataDict = response["Meta Data"] as? [String: Any] else { return }
         
         if let information = metaDataDict["1. Information"] as? String,
             let symbol = metaDataDict["2. Symbol"] as? String,
@@ -130,7 +102,7 @@ class QueryService {
             metaData = MetaData(information: information, symbol: symbol, lastRefreshed: lastRefreshed, outputSize: outputSize, timeZone: timeZone)
         }
         
-        guard let timeSeriesDict = response!["Time Series (Daily)"] as? Dictionary<String, JSONDictionary> else { return }
+        guard let timeSeriesDict = response["Time Series (Daily)"] as? Dictionary<String, JSONDictionary> else { return }
         
         for (_, stockDictionary) in timeSeriesDict{
             if
@@ -148,23 +120,14 @@ class QueryService {
         stock = Stock(companyName: "", metaData: metaData!, timeSeries: timeSeriesDaily)
     }
     
-    private func updateSearchResults(_ data: Data) {
-        var response: JSONDictionary?
+    private func updateSearchResults(_ data: Any) {
         bestMatches.removeAll()
         
-        do {
-            response = try JSONSerialization.jsonObject(with: data, options: []) as? JSONDictionary
-        } catch let parseError as NSError {
-            errorMessage += "JSONSerialization error: \(parseError.localizedDescription)\n"
-            return
-        }
-        
-        guard let array = response!["bestMatches"] as? [Any] else { return }
-        
-        var index = 0
-        
+        guard let response = data as? [String: AnyObject] else { return}
+        guard let array = response["bestMatches"] as? [Any] else { return }
+
         for stockDictionary in array {
-            if let stockDictionary = stockDictionary as? JSONDictionary,
+            if let stockDictionary = stockDictionary as? [String: Any],
                 let symbol = stockDictionary["1. symbol"] as? String,
                 let name = stockDictionary["2. name"] as? String,
                 let type = stockDictionary["3. type"] as? String,
@@ -175,14 +138,12 @@ class QueryService {
                 let currency = stockDictionary["8. currency"] as? String,
                 let matchScore = stockDictionary["9. matchScore"] as? String{
                 bestMatches.append(BestMatch(symbol: symbol, name: name, type: type, region: region, marketOpen: marketOpen, marketClose: marketClose, timezone: timezone, currency: currency, matchScore: matchScore))
-                index += 1
             } else {
-                errorMessage += "Problem parsing stockkDictionary\n"
+                errorMessage += "Problem parsing stockDictionary\n"
             }
         }
     }
-    
-    
+
 }
 
 

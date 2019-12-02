@@ -30,7 +30,7 @@ class StockViewController: UIViewController {
     let collectionViewCellWidthCoefficient: CGFloat = 0.55
     let priceButtonCornerRadius: CGFloat = 10
     
-    private var itemsNumber = 1000
+    private var itemsNumber = 2000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +50,11 @@ class StockViewController: UIViewController {
     }
     
     private func getStocks() {
+        let dispatchGroup = DispatchGroup()
+
         for stock in stocks {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            dispatchGroup.enter()
                 self.queryService.getStockResults(searchTerm: stock) { [weak self] results, errorMessage in
                     if let results = results {
                         self?.searchResults.append(results)
@@ -60,8 +63,12 @@ class StockViewController: UIViewController {
                     if !errorMessage.isEmpty {
                         print("Search error: " + errorMessage)
                     }
+                    dispatchGroup.leave()
                 }
-            }
+//            }
+        }
+        dispatchGroup.notify(queue: DispatchQueue.main) {
+            self.collectionView.reloadData()
         }
     }
     private func getStock(_ stock: String) {
@@ -85,29 +92,31 @@ class StockViewController: UIViewController {
     }
     
     private func animateChangingTitle(for indexPath: IndexPath) {
-        UIView.transition(with: stockTitleLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            self.stockTitleLabel.text = self.searchResults[indexPath.row % self.searchResults.count].metaData.symbol
-        }, completion: nil)
-        UIView.transition(with: openLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            let open = self.searchResults[indexPath.row % self.searchResults.count].timeSeries.last?.open as! String
-            self.openLabel.text = "Open:  \(open)"
-        }, completion: nil)
-        UIView.transition(with: highLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            let high = self.searchResults[indexPath.row % self.searchResults.count].timeSeries.last?.high as! String
-            self.highLabel.text = "High:  \(high)"
-        }, completion: nil)
-        UIView.transition(with: lowLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            let low = self.searchResults[indexPath.row % self.searchResults.count].timeSeries.last?.low as! String
-            self.lowLabel.text = "Low:  \(low)"
-        }, completion: nil)
-        UIView.transition(with: closeLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            let close = self.searchResults[indexPath.row % self.searchResults.count].timeSeries.last?.close as! String
-            self.closeLabel.text = "Close:  \(close)"
-        }, completion: nil)
-        UIView.transition(with: volumeLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            let volume = self.searchResults[indexPath.row % self.searchResults.count].timeSeries.last?.volume as! String
-            self.volumeLabel.text = "Volume:  \(volume)"
-        }, completion: nil)
+        if searchResults.count > 0 {
+            UIView.transition(with: stockTitleLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                self.stockTitleLabel.text = self.searchResults[(indexPath.row + 1) % self.searchResults.count].metaData.symbol
+            }, completion: nil)
+            UIView.transition(with: openLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                let open = self.searchResults[(indexPath.row + 1) % self.searchResults.count].timeSeries.last?.open as! String
+                self.openLabel.text = "Open:  \(open)"
+            }, completion: nil)
+            UIView.transition(with: highLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                let high = self.searchResults[(indexPath.row + 1) % self.searchResults.count].timeSeries.last?.high as! String
+                self.highLabel.text = "High:  \(high)"
+            }, completion: nil)
+            UIView.transition(with: lowLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                let low = self.searchResults[(indexPath.row + 1) % self.searchResults.count].timeSeries.last?.low as! String
+                self.lowLabel.text = "Low:  \(low)"
+            }, completion: nil)
+            UIView.transition(with: closeLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                let close = self.searchResults[(indexPath.row + 1) % self.searchResults.count].timeSeries.last?.close as! String
+                self.closeLabel.text = "Close:  \(close)"
+            }, completion: nil)
+            UIView.transition(with: volumeLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                let volume = self.searchResults[(indexPath.row + 1) % self.searchResults.count].timeSeries.last?.volume as! String
+                self.volumeLabel.text = "Volume:  \(volume)"
+            }, completion: nil)
+        }
     }
     
     @IBAction func goToSearch(_ sender: Any) {
@@ -130,9 +139,9 @@ extension StockViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StockCollectionViewCell", for: indexPath) as! StockCollectionViewCell
         if searchResults.count > 0 {
             let stock = searchResults[indexPath.row % self.searchResults.count]
-            cell.configureStockCell(cell, stock, for: indexPath)
+            cell.configureStockCell(cell, stock)
         }else {
-            cell.configureCell(cell, for: indexPath)
+            cell.configureCell(cell)
         }
         return cell
     }
@@ -147,7 +156,8 @@ extension StockViewController: UICollectionViewDelegate {
         let locationThird = CGPoint(x: collectionView.center.x + scrollView.contentOffset.x - 20, y: collectionView.center.y + scrollView.contentOffset.y)
         
         if let indexPathFirst = collectionView.indexPathForItem(at: locationFirst), let indexPathSecond = collectionView.indexPathForItem(at: locationSecond), let indexPathThird = collectionView.indexPathForItem(at: locationThird), indexPathFirst.row == indexPathSecond.row && indexPathSecond.row == indexPathThird.row  {
-            self.animateChangingTitle(for: indexPathFirst)
+            print(indexPathFirst.row)
+        self.animateChangingTitle(for: indexPathFirst)
         }
     }
 }
